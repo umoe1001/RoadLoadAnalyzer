@@ -33,5 +33,5 @@ The RoadLoad system is designed to scan road elevations using ultrasonic sensors
 - Research and development
 
 ## References
-- [Ultrasonic Sensor and ESP32]https://randomnerdtutorials.com/esp32-hc-sr04-ultrasonic-arduino/
-- [Sending Emails with ESP32]https://randomnerdtutorials.com/esp32-send-email-smtp-server-arduino-ide/
+- [Ultrasonic Sensor and ESP32](https://randomnerdtutorials.com/esp32-hc-sr04-ultrasonic-arduino/)
+- [Sending Emails with ESP32](https://randomnerdtutorials.com/esp32-send-email-smtp-server-arduino-ide/)
