@@ -37,7 +37,7 @@ This project describes the execution of a load data analysis using the Husky A20
    - These roads serve as the test track for the Husky A200.
 
 2. **Reference Scans**:
-   - The rough roads were scanned using the RoadLoad system to obtain a reference for analysis.
+   - The rough roads were scanned using the [RoadLoad](https://github.com/umoe1001/RoadLoadAnalyzer/tree/main/RoadLoad) system to obtain a reference for analysis.
 
 3. **Driving Tests with the Husky A200**:
    - The umx_driver um6 was applied to the Husky A200.
