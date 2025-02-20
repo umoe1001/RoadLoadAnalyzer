@@ -20,14 +20,14 @@ This project describes the execution of a load data analysis using the Husky A20
 - Perform reference scans with a RoadLoad system
 - Apply the umx_driver um6 to the Husky A200
 - Conduct driving tests on the rough roads
-- Analyze the collected data using the LoadAnalyzer tool
+- Analyze the collected data using the [LoadAnalyzer](https://github.com/umoe1001/RoadLoadAnalyzer/tree/main/LoadAnalyzer) tool
 - Write a scientific paper on the experiments and results
 
 ## Hardware and Software
 
 - **Robot**: Husky A200
 - **Scanner**: [RoadLoad](https://github.com/umoe1001/RoadLoadAnalyzer/tree/main/RoadLoad) system
-- **Software**: umx_driver um6, LoadAnalyzer
+- **Software**: umx_driver um6, [LoadAnalyzer](https://github.com/umoe1001/RoadLoadAnalyzer/tree/main/LoadAnalyzer)
 - **Data Processing**: Python, Pandas, NumPy, PyLife
 
 ## Experiments
