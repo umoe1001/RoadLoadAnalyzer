@@ -1,4 +1,4 @@
-# Load Data Analysis with Husky A200
+# RoadLoadAnalyzer -- An exemplary load data analysis using a mobile robot platform
 
 ## Project Description
 
