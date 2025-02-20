@@ -1,4 +1,4 @@
-# RoadLoadAnalyzer -- An exemplary load data analysis using a mobile robot platform
+# RoadLoadAnalyzer - An exemplary load data analysis using a mobile robot platform
 
 ## Project Description
 
