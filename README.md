@@ -61,4 +61,4 @@ This project successfully demonstrated the application of real experiments for l
 
 ## References
 
-- [PyLife Documentation](https://github.com/bos)
+- [PyLife Documentation](https://pylife.readthedocs.io/en/stable/)
