@@ -2,8 +2,8 @@
 #include <WiFi.h>
 #include <ESP_Mail_Client.h>
 
-#define WIFI_SSID "..."
-#define WIFI_PASSWORD "..."
+#define WIFI_SSID "UPC6358533"
+#define WIFI_PASSWORD "enbdjb3WuGhe"
 
 #define SMTP_HOST "smtp.gmail.com"
 #define SMTP_PORT 465
@@ -15,6 +15,7 @@
 
 const int triggerPin = 25;
 const int echoPin = 26;
+const int sampleNumber = 1350; // change this to the maximum if I want to record with 10 Hz than I need ca. 5400 Measurments
 
 //define sound speed in cm/uS
 #define SOUND_SPEED 0.034
@@ -28,7 +29,7 @@ struct Measurement {
   float distance;
 };
 
-Measurement measurements[600];
+Measurement measurements[sampleNumber];
 int distanceIndex = 0;
 
 SMTPSession smtp;
@@ -90,20 +91,20 @@ void loop() {
   Serial.println(distanceCm);
 
   // Save distance to array
-  if (distanceIndex < 600) {
+  if (distanceIndex < sampleNumber) {
     distanceIndex++;
     measurements[distanceIndex].distance = distanceCm;
     measurements[distanceIndex].timestamp = currentTime;
   }
 
   // Check if -- seconds have passed
-  if (millis() - startTime >= 180000) {
+  if (millis() - startTime >= sampleNumber*100) {
     sendEmail(measurements, distanceIndex);
     distanceIndex = 0;
     startTime = millis();
   }
   
-  delay(500);
+  delay(100);
 }
 
 /* Callback function to get the Email sending status */
@@ -113,9 +114,6 @@ void smtpCallback(SMTP_Status status){
 
   /* Print the sending result */
   if (status.success()){
-    // ESP_MAIL_PRINTF used in the examples is for format printing via debug Serial port
-    // that works for all supported Arduino platform SDKs e.g. AVR, SAMD, ESP32 and ESP8266.
-    // In ESP8266 and ESP32, you can use Serial.printf directly.
 
     Serial.println("----------------");
     ESP_MAIL_PRINTF("Message sent success: %d\n", status.completedCount());
@@ -158,7 +156,7 @@ void sendEmail(Measurement data[], int length) {
   SMTP_Message message;
   message.sender.name = F("ESP32 Sensor");
   message.sender.email = AUTHOR_EMAIL;
-  message.subject = F("Distance Measurements Right - ESP32");
+  message.subject = F("Distance Measurements RIGHT - ESP32");
   message.addRecipient(F("Recipient"), RECIPIENT_EMAIL);
 
   String textMsg = "Distance measurements (cm) over 30 seconds:\n";
